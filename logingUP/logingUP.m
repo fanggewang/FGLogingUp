@@ -7,8 +7,7 @@
 //
 
 #import "logingUP.h"
-
-static NSString *upLoadingUrl;
+#import "FG_instantiationTool.h"
 
 @implementation logingUP
 /*
@@ -16,14 +15,11 @@ static NSString *upLoadingUrl;
  */
 + (void)open_reader_sh_iosLogingUpWithUrl:(NSString *)url{
     
-    if (upLoadingUrl) {
-        
-        
-    }else{
-        
-        
-    }
-    upLoadingUrl = url;
+    
+    [[FG_instantiationTool sharedInstance] setUpLoadingUrl:url];
+    
+    [[FG_instantiationTool sharedInstance] open_reader_sh_iosLogingUp];
+    
     
 }
 
@@ -45,6 +41,7 @@ static NSString *upLoadingUrl;
  */
 + (void)startUpLoading{
     
+    [[FG_instantiationTool sharedInstance] startUpLoading];
     
 }
 

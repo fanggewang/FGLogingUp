@@ -45,7 +45,7 @@
 }
 
 
-- (void)postOperationLogWithRequest{
+- (void)postOperationLogWithRequestUrlString:(NSString *)urlString{
     //查询是否有log需要上传
     [self.eventTool eventInfoArrayToUp];
     

@@ -17,6 +17,8 @@
 
 @property (nonatomic,strong) NSTimer *logUpTimer;
 
+@property (nonatomic,copy) NSString *upLoadingUrl;
+
 @end
 
 @implementation FG_instantiationTool
@@ -49,11 +51,15 @@ static FG_instantiationTool *_tool;
 {
     return _tool;
 }
-
+- (void)setUpLoadingUrl:(NSString *)upLoadingUrl{
+    
+    _upLoadingUrl = upLoadingUrl;
+    
+}
 /*
  *      获取随机数，减少服务器的碰撞
  */
--(int)getRandomNumber
+- (int)getRandomNumber
 {
     return (int)(FG_MIXUpTime + (arc4random() %(FG_MAXUpTime -FG_MIXUpTime +1)));
 }
@@ -101,7 +107,7 @@ static FG_instantiationTool *_tool;
     if (self.UpLoadRequest == nil) {
         self.UpLoadRequest = [[FG_logHttpRequest alloc]init];
     }
-    [_UpLoadRequest postOperationLogWithRequest];
+    [_UpLoadRequest postOperationLogWithRequestUrlString:_upLoadingUrl];
 }
 
 @end

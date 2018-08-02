@@ -10,6 +10,6 @@
 
 @interface FG_logHttpRequest : NSObject
 
-- (void)postOperationLogWithRequest;
+- (void)postOperationLogWithRequestUrlString:(NSString *)urlString;
 
 @end

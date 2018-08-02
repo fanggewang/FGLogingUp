@@ -7,11 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		843FE9F92100AF70003D9672 /* logingUP.m in Sources */ = {isa = PBXBuildFile; fileRef = 843FE9F82100AF70003D9672 /* logingUP.m */; };
-		843FE9FA2100AF70003D9672 /* logingUP.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 843FE9F72100AF70003D9672 /* logingUP.h */; };
-		843FEA022100B2FA003D9672 /* FG_instantiationTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 843FEA012100B2FA003D9672 /* FG_instantiationTool.m */; };
-		843FEA09210310EC003D9672 /* FG_logHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 843FEA08210310EC003D9672 /* FG_logHttpRequest.m */; };
-		843FEA0C21100BC4003D9672 /* FG_eventInfosTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 843FEA0B21100BC4003D9672 /* FG_eventInfosTool.m */; };
+		84216F052111AA79002C90F4 /* FG_instantiationTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 84216EFD2111AA79002C90F4 /* FG_instantiationTool.m */; };
+		84216F062111AA79002C90F4 /* logingUP.m in Sources */ = {isa = PBXBuildFile; fileRef = 84216F022111AA79002C90F4 /* logingUP.m */; };
+		84216F072111AA79002C90F4 /* FG_eventInfosTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 84216F032111AA79002C90F4 /* FG_eventInfosTool.m */; };
+		84216F082111AA79002C90F4 /* FG_logHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 84216F042111AA79002C90F4 /* FG_logHttpRequest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -21,23 +20,22 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				843FE9FA2100AF70003D9672 /* logingUP.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		84216EFC2111AA79002C90F4 /* logingUP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = logingUP.h; sourceTree = "<group>"; };
+		84216EFD2111AA79002C90F4 /* FG_instantiationTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FG_instantiationTool.m; sourceTree = "<group>"; };
+		84216EFE2111AA79002C90F4 /* FG_eventInfosTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FG_eventInfosTool.h; sourceTree = "<group>"; };
+		84216EFF2111AA79002C90F4 /* FG_logHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FG_logHttpRequest.h; sourceTree = "<group>"; };
+		84216F002111AA79002C90F4 /* FG_instantiationTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FG_instantiationTool.h; sourceTree = "<group>"; };
+		84216F012111AA79002C90F4 /* FGHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGHeader.h; sourceTree = "<group>"; };
+		84216F022111AA79002C90F4 /* logingUP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = logingUP.m; sourceTree = "<group>"; };
+		84216F032111AA79002C90F4 /* FG_eventInfosTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FG_eventInfosTool.m; sourceTree = "<group>"; };
+		84216F042111AA79002C90F4 /* FG_logHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FG_logHttpRequest.m; sourceTree = "<group>"; };
 		843FE9F42100AF70003D9672 /* liblogingUP.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblogingUP.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		843FE9F72100AF70003D9672 /* logingUP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = logingUP.h; sourceTree = "<group>"; };
-		843FE9F82100AF70003D9672 /* logingUP.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = logingUP.m; sourceTree = "<group>"; };
-		843FEA002100B2FA003D9672 /* FG_instantiationTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FG_instantiationTool.h; sourceTree = "<group>"; };
-		843FEA012100B2FA003D9672 /* FG_instantiationTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FG_instantiationTool.m; sourceTree = "<group>"; };
-		843FEA032100B36D003D9672 /* FGHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FGHeader.h; sourceTree = "<group>"; };
-		843FEA07210310EC003D9672 /* FG_logHttpRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FG_logHttpRequest.h; sourceTree = "<group>"; };
-		843FEA08210310EC003D9672 /* FG_logHttpRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FG_logHttpRequest.m; sourceTree = "<group>"; };
-		843FEA0A21100BC4003D9672 /* FG_eventInfosTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FG_eventInfosTool.h; sourceTree = "<group>"; };
-		843FEA0B21100BC4003D9672 /* FG_eventInfosTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FG_eventInfosTool.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +49,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84216EFB2111AA79002C90F4 /* logingUP */ = {
+			isa = PBXGroup;
+			children = (
+				84216EFC2111AA79002C90F4 /* logingUP.h */,
+				84216F022111AA79002C90F4 /* logingUP.m */,
+				84216F002111AA79002C90F4 /* FG_instantiationTool.h */,
+				84216EFD2111AA79002C90F4 /* FG_instantiationTool.m */,
+				84216EFF2111AA79002C90F4 /* FG_logHttpRequest.h */,
+				84216F042111AA79002C90F4 /* FG_logHttpRequest.m */,
+				84216EFE2111AA79002C90F4 /* FG_eventInfosTool.h */,
+				84216F032111AA79002C90F4 /* FG_eventInfosTool.m */,
+				84216F012111AA79002C90F4 /* FGHeader.h */,
+			);
+			path = logingUP;
+			sourceTree = "<group>";
+		};
 		843FE9EB2100AF6F003D9672 = {
 			isa = PBXGroup;
 			children = (
-				843FE9F62100AF70003D9672 /* logingUP */,
+				84216EFB2111AA79002C90F4 /* logingUP */,
 				843FE9F52100AF70003D9672 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -65,22 +79,6 @@
 				843FE9F42100AF70003D9672 /* liblogingUP.a */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		843FE9F62100AF70003D9672 /* logingUP */ = {
-			isa = PBXGroup;
-			children = (
-				843FE9F72100AF70003D9672 /* logingUP.h */,
-				843FE9F82100AF70003D9672 /* logingUP.m */,
-				843FEA002100B2FA003D9672 /* FG_instantiationTool.h */,
-				843FEA012100B2FA003D9672 /* FG_instantiationTool.m */,
-				843FEA07210310EC003D9672 /* FG_logHttpRequest.h */,
-				843FEA08210310EC003D9672 /* FG_logHttpRequest.m */,
-				843FEA0A21100BC4003D9672 /* FG_eventInfosTool.h */,
-				843FEA0B21100BC4003D9672 /* FG_eventInfosTool.m */,
-				843FEA032100B36D003D9672 /* FGHeader.h */,
-			);
-			path = logingUP;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,10 +137,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				843FEA022100B2FA003D9672 /* FG_instantiationTool.m in Sources */,
-				843FEA0C21100BC4003D9672 /* FG_eventInfosTool.m in Sources */,
-				843FE9F92100AF70003D9672 /* logingUP.m in Sources */,
-				843FEA09210310EC003D9672 /* FG_logHttpRequest.m in Sources */,
+				84216F072111AA79002C90F4 /* FG_eventInfosTool.m in Sources */,
+				84216F082111AA79002C90F4 /* FG_logHttpRequest.m in Sources */,
+				84216F062111AA79002C90F4 /* logingUP.m in Sources */,
+				84216F052111AA79002C90F4 /* FG_instantiationTool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
