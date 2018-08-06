@@ -20,7 +20,12 @@
 
 @property (nonatomic,weak) id <FG_eventInfosToolDelegate>delegate;
 
+/**
+ 维护操作日志攻击
 
+ @return tool
+ */
++ (instancetype)sharedInstance;
 /**
  添加一条单条的日志
 

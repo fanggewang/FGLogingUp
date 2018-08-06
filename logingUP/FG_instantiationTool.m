@@ -8,6 +8,7 @@
 
 #import "FG_instantiationTool.h"
 #import "FG_logHttpRequest.h"
+#import "FG_eventInfosTool.h"
 //日志发送周期时间
 #define FG_MIXUpTime 60
 #define FG_MAXUpTime 120
@@ -15,6 +16,7 @@
 
 @property (nonatomic,strong) FG_logHttpRequest *UpLoadRequest;
 
+@property (nonatomic,strong) FG_eventInfosTool *eventArrayTool;
 @property (nonatomic,strong) NSTimer *logUpTimer;
 
 @property (nonatomic,copy) NSString *upLoadingUrl;

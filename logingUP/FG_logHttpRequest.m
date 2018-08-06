@@ -13,8 +13,7 @@
 
 @property (nonatomic,strong) NSMutableArray *LogArray;
 @property (nonatomic,assign) __block BOOL isUploading;//标记正在上传
-@property (nonatomic,strong) FG_eventInfosTool *eventTool;
-
+@property (nonatomic,strong) NSLock *fgLock;
 @end
 
 @implementation FG_logHttpRequest{
@@ -28,26 +27,20 @@
     }
     return _LogArray;
 }
-- (FG_eventInfosTool *)eventTool{
-    if (_eventTool == nil) {
-        _eventTool = [[FG_eventInfosTool alloc] init];
-        _eventTool.delegate = self;
+
+-(NSLock *)fgLock{
+    if (_fgLock == nil) {
+        _fgLock = [[NSLock alloc] init];
     }
-    return _eventTool;
-}
-//准备上传的数据
-- (void)initDate{
-    
-//    NSArray *OperationLog = [[DBManager sharedInstance] loginfoGetNotUpload];
-//    
-//    self.LogArray = [NSMutableArray arrayWithArray:OperationLog];
-    
+    return _fgLock;
 }
 
 
 - (void)postOperationLogWithRequestUrlString:(NSString *)urlString{
     //查询是否有log需要上传
-    [self.eventTool eventInfoArrayToUp];
+    [FG_eventInfosTool sharedInstance].delegate = self;
+    
+    [[FG_eventInfosTool sharedInstance] eventInfoArrayToUp];
     
 }
 
@@ -74,18 +67,19 @@
         _session = [NSURLSession sharedSession];
     }
     __block typeof(_isUploading)weakIsUploading = _isUploading;
+    
     //链接服务器
     NSURLSessionDataTask *task = [_session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
-        dispatch_async(dispatch_get_main_queue(), ^{
+        [self.fgLock lock];
             weakIsUploading = NO;
             if (error == nil) {
                 NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
                 if ([dic[@"success"] boolValue]) {
-                    //            NSLog(@"______成功");
-                    //成功
-                    
+                    //成功,查询是否还有需要上传的日志
+                    [[FG_eventInfosTool sharedInstance] eventInfoArrayToUp];
                 }else{
+                    
                     //服务器插入错误
                     
                     if ([dic[@"code"] intValue] == -1) {
@@ -94,14 +88,15 @@
                     }else{
                         
                     }
-                    
+                    [[FG_eventInfosTool sharedInstance] addEventInfoArray:upEvenArray];
                 }
-                
                 
             }else{
                 //网络错误
+                [[FG_eventInfosTool sharedInstance] addEventInfoArray:upEvenArray];
+                
             }
-        });
+        [self.fgLock unlock];
         
     }];
     [task resume];

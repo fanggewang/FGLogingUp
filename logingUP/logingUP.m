@@ -8,7 +8,7 @@
 
 #import "logingUP.h"
 #import "FG_instantiationTool.h"
-
+#import "FG_eventInfosTool.h"
 @implementation logingUP
 /*
  *   初始化方法 设置上传到服务器的 URL
@@ -31,8 +31,7 @@
  */
 + (void)addLogWithDic:(NSDictionary *)dic{
     
-    
-    
+    [[FG_eventInfosTool sharedInstance] addEventInfo:dic];
     
 }
 
