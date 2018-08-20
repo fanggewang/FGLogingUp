@@ -9,12 +9,15 @@
 #import "logingUP.h"
 #import "FG_instantiationTool.h"
 #import "FG_eventInfosTool.h"
+#import "FG_UncaughtExceptionHandler.h"
+
 @implementation logingUP
 /*
  *   初始化方法 设置上传到服务器的 URL
  */
 + (void)open_reader_sh_iosLogingUpWithUrl:(NSString *)url{
     
+    InstallUncaughtExceptionHandler();//监听崩溃
     
     [[FG_instantiationTool sharedInstance] setUpLoadingUrl:url];
     

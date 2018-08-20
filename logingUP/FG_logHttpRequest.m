@@ -14,6 +14,7 @@
 @property (nonatomic,strong) NSMutableArray *LogArray;
 @property (nonatomic,assign) __block BOOL isUploading;//标记正在上传
 @property (nonatomic,strong) NSLock *fgLock;
+@property (nonatomic,copy) NSString *upUrlString;
 @end
 
 @implementation FG_logHttpRequest{
@@ -37,6 +38,7 @@
 
 
 - (void)postOperationLogWithRequestUrlString:(NSString *)urlString{
+    _upUrlString = urlString;
     //查询是否有log需要上传
     [FG_eventInfosTool sharedInstance].delegate = self;
     
@@ -56,7 +58,7 @@
     _isUploading = YES;
     
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:upEvenArray options:NSUTF8StringEncoding error:nil];
-    NSURL *requesturl = [NSURL URLWithString:@""];
+    NSURL *requesturl = [NSURL URLWithString:_upUrlString];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:requesturl cachePolicy:0 timeoutInterval:10];
     [request setHTTPMethod:@"POST"];
     [request setValue:@"application/json;charset=UTF-8" forHTTPHeaderField:@"Content-Type"];

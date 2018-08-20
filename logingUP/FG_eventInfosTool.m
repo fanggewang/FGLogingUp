@@ -7,7 +7,12 @@
 //
 
 #import "FG_eventInfosTool.h"
+#import <objc/message.h>
+#import <UIKit/UIKit.h>
+
 #define FG_LogUPloadNumber 50//一次最大上传日志条数
+#define Fg_LogFile [NSString stringWithFormat:@"%@/FGLOG",[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]]
+#define FG_dataFile [NSString stringWithFormat:@"%@/eventLog",Fg_LogFile]
 
 @interface FG_eventInfosTool()
 
@@ -19,6 +24,29 @@
 
 @implementation FG_eventInfosTool
 static FG_eventInfosTool *_tool;
+
++ (void)load{
+    
+    if (![[NSFileManager defaultManager] fileExistsAtPath:Fg_LogFile]) {
+        //创建文件夹
+        [[NSFileManager defaultManager] createDirectoryAtPath:Fg_LogFile withIntermediateDirectories:YES attributes:nil error:nil];
+    }
+
+}
++ (void)initialize{
+    
+    /*
+     *  监听退出APP
+     */
+    id app = [UIApplication sharedApplication].delegate;
+    Method myWillTerminate = class_getInstanceMethod(self, @selector(FG_applicationWillTerminate:));
+    Method appDelegateWillTerminate = class_getInstanceMethod([app class], @selector(applicationWillTerminate:));
+    method_exchangeImplementations(myWillTerminate, appDelegateWillTerminate);
+    
+    Method myDidEnterBackground = class_getInstanceMethod(self, @selector(FG_applicationDidEnterBackground:));
+    Method applicationDidEnterBackground = class_getInstanceMethod([app class], @selector(applicationDidEnterBackground:));
+    method_exchangeImplementations(myDidEnterBackground, applicationDidEnterBackground);
+}
 /**
  *     构造方法
  */
@@ -27,6 +55,7 @@ static FG_eventInfosTool *_tool;
     dispatch_once(&onceToken, ^{
         if (_tool == nil) {
             _tool = [super allocWithZone:zone];
+            [[NSNotificationCenter defaultCenter] addObserver:_tool selector:@selector(comeHome:) name:@"UIApplicationDidEnterBackgroundNotification" object:nil];
             
         }
     });
@@ -50,6 +79,12 @@ static FG_eventInfosTool *_tool;
 - (NSMutableArray *)eventInfos{
     if (_eventInfos == nil) {
         _eventInfos = [NSMutableArray array];
+        NSArray * arr = [NSArray arrayWithContentsOfFile:FG_dataFile];
+        if (arr.count) {
+            [_eventInfos addObject:arr];
+        }
+        
+        
     }
     return _eventInfos;
 }
@@ -60,7 +95,32 @@ static FG_eventInfosTool *_tool;
     }
     return _arrayQueue;
 }
+- (void)comeHome:(UIApplication *)application {
+    NSLog(@"进入后台");
+}
 
+- (void)FG_applicationDidEnterBackground:(UIApplication *)application{
+    
+    [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^(){}];
+    
+    [[FG_eventInfosTool sharedInstance] FG_applicationDidEnterBackground:application];
+}
+
+- (void)FG_applicationWillTerminate:(UIApplication *)application{
+    [[FG_eventInfosTool sharedInstance] writeLog];
+    
+    [[FG_eventInfosTool sharedInstance] FG_applicationWillTerminate:application];
+}
+
+- (void)writeLog{
+    NSLog(@"程序退出，写日志到本地");
+    BOOL state = [self.eventInfos writeToFile:FG_dataFile atomically:YES];
+    if (state == YES) {
+        NSLog(@"write successfully");
+    }else{
+        NSLog(@"fail to write");
+    }
+}
 
 - (void)addEventInfo:(NSDictionary *)even{
     
@@ -87,7 +147,8 @@ static FG_eventInfosTool *_tool;
 }
 
 - (void)eventInfoArrayToUp{
-    
+
+
     NSBlockOperation *addOperation = [NSBlockOperation blockOperationWithBlock:^{
         
         NSArray *upEvenInfoArray;

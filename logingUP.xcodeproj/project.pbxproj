@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		84216F052111AA79002C90F4 /* FG_instantiationTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 84216EFD2111AA79002C90F4 /* FG_instantiationTool.m */; };
-		84216F062111AA79002C90F4 /* logingUP.m in Sources */ = {isa = PBXBuildFile; fileRef = 84216F022111AA79002C90F4 /* logingUP.m */; };
-		84216F072111AA79002C90F4 /* FG_eventInfosTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 84216F032111AA79002C90F4 /* FG_eventInfosTool.m */; };
-		84216F082111AA79002C90F4 /* FG_logHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 84216F042111AA79002C90F4 /* FG_logHttpRequest.m */; };
+		84216F6821184AFB002C90F4 /* FG_instantiationTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 84216F6021184AFB002C90F4 /* FG_instantiationTool.m */; };
+		84216F6921184AFB002C90F4 /* logingUP.m in Sources */ = {isa = PBXBuildFile; fileRef = 84216F6521184AFB002C90F4 /* logingUP.m */; };
+		84216F6A21184AFB002C90F4 /* FG_eventInfosTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 84216F6621184AFB002C90F4 /* FG_eventInfosTool.m */; };
+		84216F6B21184AFB002C90F4 /* FG_logHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 84216F6721184AFB002C90F4 /* FG_logHttpRequest.m */; };
+		842B731E212AC528003D1E98 /* FG_UncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 842B731D212AC528003D1E98 /* FG_UncaughtExceptionHandler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,15 +27,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		84216EFC2111AA79002C90F4 /* logingUP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = logingUP.h; sourceTree = "<group>"; };
-		84216EFD2111AA79002C90F4 /* FG_instantiationTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FG_instantiationTool.m; sourceTree = "<group>"; };
-		84216EFE2111AA79002C90F4 /* FG_eventInfosTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FG_eventInfosTool.h; sourceTree = "<group>"; };
-		84216EFF2111AA79002C90F4 /* FG_logHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FG_logHttpRequest.h; sourceTree = "<group>"; };
-		84216F002111AA79002C90F4 /* FG_instantiationTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FG_instantiationTool.h; sourceTree = "<group>"; };
-		84216F012111AA79002C90F4 /* FGHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGHeader.h; sourceTree = "<group>"; };
-		84216F022111AA79002C90F4 /* logingUP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = logingUP.m; sourceTree = "<group>"; };
-		84216F032111AA79002C90F4 /* FG_eventInfosTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FG_eventInfosTool.m; sourceTree = "<group>"; };
-		84216F042111AA79002C90F4 /* FG_logHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FG_logHttpRequest.m; sourceTree = "<group>"; };
+		84216F5F21184AFB002C90F4 /* logingUP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = logingUP.h; sourceTree = "<group>"; };
+		84216F6021184AFB002C90F4 /* FG_instantiationTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FG_instantiationTool.m; sourceTree = "<group>"; };
+		84216F6121184AFB002C90F4 /* FG_eventInfosTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FG_eventInfosTool.h; sourceTree = "<group>"; };
+		84216F6221184AFB002C90F4 /* FG_logHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FG_logHttpRequest.h; sourceTree = "<group>"; };
+		84216F6321184AFB002C90F4 /* FG_instantiationTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FG_instantiationTool.h; sourceTree = "<group>"; };
+		84216F6421184AFB002C90F4 /* FGHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGHeader.h; sourceTree = "<group>"; };
+		84216F6521184AFB002C90F4 /* logingUP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = logingUP.m; sourceTree = "<group>"; };
+		84216F6621184AFB002C90F4 /* FG_eventInfosTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FG_eventInfosTool.m; sourceTree = "<group>"; };
+		84216F6721184AFB002C90F4 /* FG_logHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FG_logHttpRequest.m; sourceTree = "<group>"; };
+		842B731C212AC528003D1E98 /* FG_UncaughtExceptionHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FG_UncaughtExceptionHandler.h; sourceTree = "<group>"; };
+		842B731D212AC528003D1E98 /* FG_UncaughtExceptionHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FG_UncaughtExceptionHandler.m; sourceTree = "<group>"; };
 		843FE9F42100AF70003D9672 /* liblogingUP.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblogingUP.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -49,18 +52,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		84216EFB2111AA79002C90F4 /* logingUP */ = {
+		84216F5E21184AFB002C90F4 /* logingUP */ = {
 			isa = PBXGroup;
 			children = (
-				84216EFC2111AA79002C90F4 /* logingUP.h */,
-				84216F022111AA79002C90F4 /* logingUP.m */,
-				84216F002111AA79002C90F4 /* FG_instantiationTool.h */,
-				84216EFD2111AA79002C90F4 /* FG_instantiationTool.m */,
-				84216EFF2111AA79002C90F4 /* FG_logHttpRequest.h */,
-				84216F042111AA79002C90F4 /* FG_logHttpRequest.m */,
-				84216EFE2111AA79002C90F4 /* FG_eventInfosTool.h */,
-				84216F032111AA79002C90F4 /* FG_eventInfosTool.m */,
-				84216F012111AA79002C90F4 /* FGHeader.h */,
+				84216F5F21184AFB002C90F4 /* logingUP.h */,
+				84216F6521184AFB002C90F4 /* logingUP.m */,
+				84216F6321184AFB002C90F4 /* FG_instantiationTool.h */,
+				84216F6021184AFB002C90F4 /* FG_instantiationTool.m */,
+				84216F6121184AFB002C90F4 /* FG_eventInfosTool.h */,
+				84216F6621184AFB002C90F4 /* FG_eventInfosTool.m */,
+				84216F6221184AFB002C90F4 /* FG_logHttpRequest.h */,
+				84216F6721184AFB002C90F4 /* FG_logHttpRequest.m */,
+				842B731C212AC528003D1E98 /* FG_UncaughtExceptionHandler.h */,
+				842B731D212AC528003D1E98 /* FG_UncaughtExceptionHandler.m */,
+				84216F6421184AFB002C90F4 /* FGHeader.h */,
 			);
 			path = logingUP;
 			sourceTree = "<group>";
@@ -68,7 +73,7 @@
 		843FE9EB2100AF6F003D9672 = {
 			isa = PBXGroup;
 			children = (
-				84216EFB2111AA79002C90F4 /* logingUP */,
+				84216F5E21184AFB002C90F4 /* logingUP */,
 				843FE9F52100AF70003D9672 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -137,10 +142,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84216F072111AA79002C90F4 /* FG_eventInfosTool.m in Sources */,
-				84216F082111AA79002C90F4 /* FG_logHttpRequest.m in Sources */,
-				84216F062111AA79002C90F4 /* logingUP.m in Sources */,
-				84216F052111AA79002C90F4 /* FG_instantiationTool.m in Sources */,
+				84216F6A21184AFB002C90F4 /* FG_eventInfosTool.m in Sources */,
+				842B731E212AC528003D1E98 /* FG_UncaughtExceptionHandler.m in Sources */,
+				84216F6B21184AFB002C90F4 /* FG_logHttpRequest.m in Sources */,
+				84216F6921184AFB002C90F4 /* logingUP.m in Sources */,
+				84216F6821184AFB002C90F4 /* FG_instantiationTool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,7 +204,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -250,7 +256,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

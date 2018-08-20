@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 
 
-
 @protocol FG_eventInfosToolDelegate <NSObject>
 
 - (void)retunEventInfoArray:(NSArray *)upEvenArray;
@@ -26,6 +25,7 @@
  @return tool
  */
 + (instancetype)sharedInstance;
+- (void)writeLog;
 /**
  添加一条单条的日志
 
