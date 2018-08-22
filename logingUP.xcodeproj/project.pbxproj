@@ -12,6 +12,7 @@
 		84216F6A21184AFB002C90F4 /* FG_eventInfosTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 84216F6621184AFB002C90F4 /* FG_eventInfosTool.m */; };
 		84216F6B21184AFB002C90F4 /* FG_logHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 84216F6721184AFB002C90F4 /* FG_logHttpRequest.m */; };
 		842B731E212AC528003D1E98 /* FG_UncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 842B731D212AC528003D1E98 /* FG_UncaughtExceptionHandler.m */; };
+		842B7323212D0825003D1E98 /* FG_AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 842B7322212D0825003D1E98 /* FG_AFNetworkReachabilityManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,6 +39,8 @@
 		84216F6721184AFB002C90F4 /* FG_logHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FG_logHttpRequest.m; sourceTree = "<group>"; };
 		842B731C212AC528003D1E98 /* FG_UncaughtExceptionHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FG_UncaughtExceptionHandler.h; sourceTree = "<group>"; };
 		842B731D212AC528003D1E98 /* FG_UncaughtExceptionHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FG_UncaughtExceptionHandler.m; sourceTree = "<group>"; };
+		842B7321212D0825003D1E98 /* FG_AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FG_AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		842B7322212D0825003D1E98 /* FG_AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FG_AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
 		843FE9F42100AF70003D9672 /* liblogingUP.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblogingUP.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -65,6 +68,8 @@
 				84216F6721184AFB002C90F4 /* FG_logHttpRequest.m */,
 				842B731C212AC528003D1E98 /* FG_UncaughtExceptionHandler.h */,
 				842B731D212AC528003D1E98 /* FG_UncaughtExceptionHandler.m */,
+				842B7321212D0825003D1E98 /* FG_AFNetworkReachabilityManager.h */,
+				842B7322212D0825003D1E98 /* FG_AFNetworkReachabilityManager.m */,
 				84216F6421184AFB002C90F4 /* FGHeader.h */,
 			);
 			path = logingUP;
@@ -146,6 +151,7 @@
 				842B731E212AC528003D1E98 /* FG_UncaughtExceptionHandler.m in Sources */,
 				84216F6B21184AFB002C90F4 /* FG_logHttpRequest.m in Sources */,
 				84216F6921184AFB002C90F4 /* logingUP.m in Sources */,
+				842B7323212D0825003D1E98 /* FG_AFNetworkReachabilityManager.m in Sources */,
 				84216F6821184AFB002C90F4 /* FG_instantiationTool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

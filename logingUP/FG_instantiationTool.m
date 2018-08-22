@@ -9,6 +9,7 @@
 #import "FG_instantiationTool.h"
 #import "FG_logHttpRequest.h"
 #import "FG_eventInfosTool.h"
+#import "FG_AFNetworkReachabilityManager.h"
 //日志发送周期时间
 #define FG_MIXUpTime 60
 #define FG_MAXUpTime 120
@@ -20,6 +21,7 @@
 @property (nonatomic,strong) NSTimer *logUpTimer;
 
 @property (nonatomic,copy) NSString *upLoadingUrl;
+@property (nonatomic,assign) BOOL isNetwrokConnect;
 
 @end
 
@@ -54,7 +56,7 @@ static FG_instantiationTool *_tool;
     return _tool;
 }
 - (void)setUpLoadingUrl:(NSString *)upLoadingUrl{
-    
+    [self monitorNetworking];
     _upLoadingUrl = upLoadingUrl;
     
 }
@@ -105,11 +107,49 @@ static FG_instantiationTool *_tool;
  *  手动开启日志上传
  */
 - (void)startUpLoading{
-    //
-    if (self.UpLoadRequest == nil) {
-        self.UpLoadRequest = [[FG_logHttpRequest alloc]init];
+    if (_isNetwrokConnect) {
+        
+        // 有网则上传
+        if (_isNetwrokConnect) {
+            if (self.UpLoadRequest == nil) {
+                self.UpLoadRequest = [[FG_logHttpRequest alloc]init];
+            }
+            [_UpLoadRequest postOperationLogWithRequestUrlString:_upLoadingUrl];
+        }
+        
+    }else{
+        //没网，则不上传
+        
     }
-    [_UpLoadRequest postOperationLogWithRequestUrlString:_upLoadingUrl];
+
+
+}
+
+- (void)setIsNetwrokConnect:(BOOL)isNetwrokConnect{
+    _isNetwrokConnect = isNetwrokConnect;
+}
+
+#pragma mark - ------------- 监测网络状态 -------------
+- (void)monitorNetworking
+{
+    [[FG_AFNetworkReachabilityManager sharedManager] startMonitoring];
+    [[FG_AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        
+        if (status == AFNetworkReachabilityStatusReachableViaWWAN || status == AFNetworkReachabilityStatusReachableViaWiFi) {
+            //            NSLog(@"有网");
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[FG_instantiationTool sharedInstance] setIsNetwrokConnect:YES];
+                
+            });
+            
+        }else{
+            //            NSLog(@"没网");
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[FG_instantiationTool sharedInstance] setIsNetwrokConnect:NO];
+                
+            });
+        }
+    }];
 }
 
 @end

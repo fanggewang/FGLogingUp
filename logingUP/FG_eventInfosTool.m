@@ -23,18 +23,18 @@
 @end
 
 @implementation FG_eventInfosTool
+
 static FG_eventInfosTool *_tool;
 
 + (void)load{
     
     if (![[NSFileManager defaultManager] fileExistsAtPath:Fg_LogFile]) {
-        //创建文件夹
+        //创建日志持久化缓存文件夹
         [[NSFileManager defaultManager] createDirectoryAtPath:Fg_LogFile withIntermediateDirectories:YES attributes:nil error:nil];
     }
 
 }
 + (void)initialize{
-    
     /*
      *  监听退出APP
      */
@@ -47,6 +47,26 @@ static FG_eventInfosTool *_tool;
     Method applicationDidEnterBackground = class_getInstanceMethod([app class], @selector(applicationDidEnterBackground:));
     method_exchangeImplementations(myDidEnterBackground, applicationDidEnterBackground);
 }
+#pragma mark 退出app相关操作
+
+- (void)comeHome:(UIApplication *)application {
+    NSLog(@"进入后台");
+}
+- (void)FG_applicationDidEnterBackground:(UIApplication *)application{
+    
+    [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^(){}];
+    
+    [[FG_eventInfosTool sharedInstance] FG_applicationDidEnterBackground:application];
+}
+
+- (void)FG_applicationWillTerminate:(UIApplication *)application{
+    [[FG_eventInfosTool sharedInstance] writeLog];
+    
+    [[FG_eventInfosTool sharedInstance] FG_applicationWillTerminate:application];
+}
+
+
+
 /**
  *     构造方法
  */
@@ -83,11 +103,10 @@ static FG_eventInfosTool *_tool;
         if (arr.count) {
             [_eventInfos addObject:arr];
         }
-        
-        
     }
     return _eventInfos;
 }
+
 - (NSOperationQueue *)arrayQueue{
     if (_arrayQueue == nil) {
         _arrayQueue = [[NSOperationQueue alloc] init];
@@ -95,24 +114,14 @@ static FG_eventInfosTool *_tool;
     }
     return _arrayQueue;
 }
-- (void)comeHome:(UIApplication *)application {
-    NSLog(@"进入后台");
-}
 
-- (void)FG_applicationDidEnterBackground:(UIApplication *)application{
-    
-    [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^(){}];
-    
-    [[FG_eventInfosTool sharedInstance] FG_applicationDidEnterBackground:application];
-}
 
-- (void)FG_applicationWillTerminate:(UIApplication *)application{
-    [[FG_eventInfosTool sharedInstance] writeLog];
-    
-    [[FG_eventInfosTool sharedInstance] FG_applicationWillTerminate:application];
-}
 
+/**
+ 日志持久化到本地
+ */
 - (void)writeLog{
+    
     NSLog(@"程序退出，写日志到本地");
     BOOL state = [self.eventInfos writeToFile:FG_dataFile atomically:YES];
     if (state == YES) {
