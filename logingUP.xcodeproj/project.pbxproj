@@ -33,7 +33,6 @@
 		84216F6121184AFB002C90F4 /* FG_eventInfosTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FG_eventInfosTool.h; sourceTree = "<group>"; };
 		84216F6221184AFB002C90F4 /* FG_logHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FG_logHttpRequest.h; sourceTree = "<group>"; };
 		84216F6321184AFB002C90F4 /* FG_instantiationTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FG_instantiationTool.h; sourceTree = "<group>"; };
-		84216F6421184AFB002C90F4 /* FGHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGHeader.h; sourceTree = "<group>"; };
 		84216F6521184AFB002C90F4 /* logingUP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = logingUP.m; sourceTree = "<group>"; };
 		84216F6621184AFB002C90F4 /* FG_eventInfosTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FG_eventInfosTool.m; sourceTree = "<group>"; };
 		84216F6721184AFB002C90F4 /* FG_logHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FG_logHttpRequest.m; sourceTree = "<group>"; };
@@ -41,6 +40,7 @@
 		842B731D212AC528003D1E98 /* FG_UncaughtExceptionHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FG_UncaughtExceptionHandler.m; sourceTree = "<group>"; };
 		842B7321212D0825003D1E98 /* FG_AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FG_AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
 		842B7322212D0825003D1E98 /* FG_AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FG_AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		842B7340212D627B003D1E98 /* FG_Header.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FG_Header.pch; sourceTree = "<group>"; };
 		843FE9F42100AF70003D9672 /* liblogingUP.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblogingUP.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -70,7 +70,7 @@
 				842B731D212AC528003D1E98 /* FG_UncaughtExceptionHandler.m */,
 				842B7321212D0825003D1E98 /* FG_AFNetworkReachabilityManager.h */,
 				842B7322212D0825003D1E98 /* FG_AFNetworkReachabilityManager.m */,
-				84216F6421184AFB002C90F4 /* FGHeader.h */,
+				842B7340212D627B003D1E98 /* FG_Header.pch */,
 			);
 			path = logingUP;
 			sourceTree = "<group>";
@@ -273,6 +273,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/logingUP/FG_Header.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -284,6 +285,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/logingUP/FG_Header.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

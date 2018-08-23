@@ -1,0 +1,15 @@
+//
+//  FG_Header.pch
+//  logingUP
+//
+//  Created by 王放歌 on 2018/8/22.
+//  Copyright © 2018年 WangFangGe. All rights reserved.
+//
+
+#ifndef FG_Header_pch
+#define FG_Header_pch
+
+#define FG_instantiationTool xxxx
+#define FG_eventInfosTool mmm
+
+#endif /* FG_Header_pch */
