@@ -7,6 +7,7 @@
 //
 
 #import "FG_eventInfosTool.h"
+#import "FG_Hardware.h"
 #import <objc/message.h>
 #import <UIKit/UIKit.h>
 
@@ -19,6 +20,10 @@
 @property (nonatomic,strong) NSMutableArray *eventInfos;
 
 @property (nonatomic,strong) NSOperationQueue *arrayQueue;
+
+@property (nonatomic,copy) NSDictionary *deviceInfo;
+
+@property (nonatomic,copy) NSDictionary *userInfo;
 
 @end
 
@@ -114,8 +119,23 @@ static FG_eventInfosTool *_tool;
     }
     return _arrayQueue;
 }
-
-
+- (NSDictionary *)deviceInfo{
+    if (_deviceInfo == nil) {
+        //获取设备的配置信息
+        _deviceInfo = [[[FG_Hardware alloc] init] currentDeviceInfo];
+    }
+    return _deviceInfo;
+}
+- (void)addUserInfo:(NSDictionary *)userInfo{
+    
+    
+    NSBlockOperation *addOperation = [NSBlockOperation blockOperationWithBlock:^{
+        
+        self.userInfo = userInfo;
+        
+    }];
+    [self.arrayQueue addOperation:addOperation];
+}
 
 /**
  日志持久化到本地
@@ -134,9 +154,27 @@ static FG_eventInfosTool *_tool;
 - (void)addEventInfo:(NSDictionary *)even{
     
     NSBlockOperation *addOperation = [NSBlockOperation blockOperationWithBlock:^{
+        /*
+         *日志设备基本数据的补充
+         */
+        NSMutableDictionary *addEven = [[NSMutableDictionary alloc] initWithDictionary:even];
+        //appInfo
+        NSDictionary *appInfo = @{
+                                  @"appId": appId,
+                                  @"devType": devType,
+                                  @"appVer": [self.deviceInfo objectForKey:@"AppVersion"],
+                                  @"model": [self.deviceInfo objectForKey:@"model"]
+                                  };
+        [addEven setObject:appInfo forKey:@"appInfo"];
+        //userInfo
+        if (self.userInfo != nil) {
+            [addEven setObject:self.userInfo forKey:@"userInfo"];
+            
+        }
         
-        [self.eventInfos addObject:even];
+        [self.eventInfos addObject:addEven];
         
+        NSLog(@"____%@",self.eventInfos);
     }];
     [self.arrayQueue addOperation:addOperation];
 
@@ -146,6 +184,9 @@ static FG_eventInfosTool *_tool;
 
 - (void)addEventInfoArray:(NSArray *)evenArray{
     
+//    [evenArray enumerateObjectsUsingBlock:^(NSDictionary *even, NSUInteger idx, BOOL * _Nonnull stop) {
+//        [self addEventInfo:even];
+//    }];
     NSBlockOperation *addOperation = [NSBlockOperation blockOperationWithBlock:^{
         
         [self.eventInfos addObjectsFromArray:evenArray];

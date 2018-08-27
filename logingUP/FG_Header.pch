@@ -12,4 +12,9 @@
 #define FG_instantiationTool xxxx
 #define FG_eventInfosTool mmm
 
+#pragma mark # App 相关配置 #
+#define appId @"01"
+#define devType @"11"
+
+
 #endif /* FG_Header_pch */

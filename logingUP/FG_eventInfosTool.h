@@ -30,6 +30,14 @@
  未上传的日志持久化到本地
  */
 - (void)writeLog;
+
+/**
+ 设置日志恒定上传的用户信息
+
+ @param userInfo 用户信息字典
+ */
+- (void)addUserInfo:(NSDictionary *)userInfo;
+
 /**
  添加一条单条的日志
 

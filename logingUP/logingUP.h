@@ -30,5 +30,11 @@
  */
 + (void)startUpLoading;
 
+/**
+ 设置日志中的个人信息
+
+ @param userInfo 个人信息字典
+ */
++ (void)setUserInfo:(NSDictionary *)userInfo;
 
 @end

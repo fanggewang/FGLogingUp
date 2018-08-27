@@ -46,6 +46,10 @@
     [[FG_instantiationTool sharedInstance] startUpLoading];
     
 }
-
++ (void)setUserInfo:(NSDictionary *)userInfo{
+    
+    [[FG_eventInfosTool sharedInstance] addUserInfo:userInfo];
+    
+}
 
 @end
