@@ -13,7 +13,10 @@
 		84216F6B21184AFB002C90F4 /* FG_logHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 84216F6721184AFB002C90F4 /* FG_logHttpRequest.m */; };
 		842B731E212AC528003D1E98 /* FG_UncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 842B731D212AC528003D1E98 /* FG_UncaughtExceptionHandler.m */; };
 		842B7323212D0825003D1E98 /* FG_AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 842B7322212D0825003D1E98 /* FG_AFNetworkReachabilityManager.m */; };
-		842B73F72133E35F003D1E98 /* FG_Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = 842B73F62133E35F003D1E98 /* FG_Hardware.m */; };
+		842B742D2134EBBD003D1E98 /* FG_Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = 842B742B2134EBBD003D1E98 /* FG_Hardware.m */; };
+		84387F13215B994B0008832C /* FG_location.m in Sources */ = {isa = PBXBuildFile; fileRef = 84387F12215B994B0008832C /* FG_location.m */; };
+		846981A42193E84D0056F7C1 /* UUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 846981A02193E84C0056F7C1 /* UUID.m */; };
+		846981A52193E84D0056F7C1 /* KeyChainStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 846981A32193E84C0056F7C1 /* KeyChainStore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,9 +45,15 @@
 		842B7321212D0825003D1E98 /* FG_AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FG_AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
 		842B7322212D0825003D1E98 /* FG_AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FG_AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
 		842B7340212D627B003D1E98 /* FG_Header.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FG_Header.pch; sourceTree = "<group>"; };
-		842B73F52133E35F003D1E98 /* FG_Hardware.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FG_Hardware.h; sourceTree = "<group>"; };
-		842B73F62133E35F003D1E98 /* FG_Hardware.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FG_Hardware.m; sourceTree = "<group>"; };
+		842B742B2134EBBD003D1E98 /* FG_Hardware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FG_Hardware.m; sourceTree = "<group>"; };
+		842B742C2134EBBD003D1E98 /* FG_Hardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FG_Hardware.h; sourceTree = "<group>"; };
+		84387F11215B994B0008832C /* FG_location.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FG_location.h; sourceTree = "<group>"; };
+		84387F12215B994B0008832C /* FG_location.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FG_location.m; sourceTree = "<group>"; };
 		843FE9F42100AF70003D9672 /* liblogingUP.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblogingUP.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		846981A02193E84C0056F7C1 /* UUID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUID.m; sourceTree = "<group>"; };
+		846981A12193E84C0056F7C1 /* KeyChainStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyChainStore.h; sourceTree = "<group>"; };
+		846981A22193E84C0056F7C1 /* UUID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUID.h; sourceTree = "<group>"; };
+		846981A32193E84C0056F7C1 /* KeyChainStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyChainStore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,8 +82,14 @@
 				842B731D212AC528003D1E98 /* FG_UncaughtExceptionHandler.m */,
 				842B7321212D0825003D1E98 /* FG_AFNetworkReachabilityManager.h */,
 				842B7322212D0825003D1E98 /* FG_AFNetworkReachabilityManager.m */,
-				842B73F52133E35F003D1E98 /* FG_Hardware.h */,
-				842B73F62133E35F003D1E98 /* FG_Hardware.m */,
+				842B742C2134EBBD003D1E98 /* FG_Hardware.h */,
+				842B742B2134EBBD003D1E98 /* FG_Hardware.m */,
+				84387F11215B994B0008832C /* FG_location.h */,
+				84387F12215B994B0008832C /* FG_location.m */,
+				846981A12193E84C0056F7C1 /* KeyChainStore.h */,
+				846981A32193E84C0056F7C1 /* KeyChainStore.m */,
+				846981A22193E84C0056F7C1 /* UUID.h */,
+				846981A02193E84C0056F7C1 /* UUID.m */,
 				842B7340212D627B003D1E98 /* FG_Header.pch */,
 			);
 			path = logingUP;
@@ -152,13 +167,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				842B742D2134EBBD003D1E98 /* FG_Hardware.m in Sources */,
 				84216F6A21184AFB002C90F4 /* FG_eventInfosTool.m in Sources */,
+				846981A42193E84D0056F7C1 /* UUID.m in Sources */,
 				842B731E212AC528003D1E98 /* FG_UncaughtExceptionHandler.m in Sources */,
-				842B73F72133E35F003D1E98 /* FG_Hardware.m in Sources */,
 				84216F6B21184AFB002C90F4 /* FG_logHttpRequest.m in Sources */,
 				84216F6921184AFB002C90F4 /* logingUP.m in Sources */,
+				84387F13215B994B0008832C /* FG_location.m in Sources */,
 				842B7323212D0825003D1E98 /* FG_AFNetworkReachabilityManager.m in Sources */,
 				84216F6821184AFB002C90F4 /* FG_instantiationTool.m in Sources */,
+				846981A52193E84D0056F7C1 /* KeyChainStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

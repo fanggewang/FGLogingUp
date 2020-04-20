@@ -19,6 +19,8 @@
     
     InstallUncaughtExceptionHandler();//监听崩溃
     
+    [[FG_eventInfosTool sharedInstance] startLocating];//获取定位
+    
     [[FG_instantiationTool sharedInstance] setUpLoadingUrl:url];
     
     [[FG_instantiationTool sharedInstance] open_reader_sh_iosLogingUp];

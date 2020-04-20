@@ -59,9 +59,10 @@
 - (void)eventInfoArrayToUp;
 
 
-/*
- *
+/**
+ 开启定位
  */
+- (void)startLocating;
 
 /**
  将维护的操作日志数组保存到本地

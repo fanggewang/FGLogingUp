@@ -9,12 +9,12 @@
 #ifndef FG_Header_pch
 #define FG_Header_pch
 
-#define FG_instantiationTool xxxx
-#define FG_eventInfosTool mmm
+//#define FG_instantiationTool xxxx
+//#define FG_eventInfosTool mmm
 
 #pragma mark # App 相关配置 #
-#define appId @"01"
-#define devType @"11"
-
+#define appId @"03"
+#define devType @(11)
+#define  KEY_USERNAME_PASSWORD @"com.company.app.usernamepassword"
 
 #endif /* FG_Header_pch */

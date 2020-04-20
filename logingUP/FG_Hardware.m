@@ -7,7 +7,7 @@
 //
 
 #import "FG_Hardware.h"
-
+#import "UUID.h"
 @implementation FG_Hardware
 
 -(NSDictionary *)currentDeviceInfo{
@@ -26,7 +26,7 @@
     [dict setObject:[self getNetType] forKey:@"NetType"];
     [dict setObject:[self getOsVersion] forKey:@"OsVersion"];
     [dict setObject:[self getAppVersion] forKey:@"AppVersion"];
-    //    [dict setObject:[self createUUID] forKey:@"UUID"];
+        [dict setObject:[UUID getUUID] forKey:@"UUID"];
     [dict setObject:[self getCurrentIP] forKey:@"IP"];
     return dict;
 }

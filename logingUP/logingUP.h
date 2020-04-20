@@ -35,6 +35,6 @@
 
  @param userInfo 个人信息字典
  */
-+ (void)setUserInfo:(NSDictionary *)userInfo;
++ (void)setUseopemrInfo:(NSDictionary *)userInfo;
 
 @end
